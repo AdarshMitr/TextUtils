@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Navbar from './components/Navbar';
+import TextForm from './components/TextForm';
+import PropTypes from 'prop-types';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+ 
+<Navbar title= "TextUtils"/>
+<div class="my-3"></div>
+
+<div className="container"><TextForm heading='Enter the text to analyze below'/></div>
+
+  </>
   );
 }
+
+Navbar.propTypes={title:PropTypes.string.isRequired,
+                  aboutText:PropTypes.string.isRequired}
+
+ Navbar.defalutProps = {
+   title: 'Set Title here',
+   about: 'About text here'
+ }                 
 
 export default App;
